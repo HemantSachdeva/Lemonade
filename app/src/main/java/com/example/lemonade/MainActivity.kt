@@ -113,32 +113,26 @@ class MainActivity : AppCompatActivity() {
                 lemonSize = lemonTree.pick()
                 squeezeCount = 0
             }
-        }
 
-        // When the image is clicked in the SQUEEZE state the squeezeCount needs to be
-        // INCREASED by 1 and lemonSize needs to be DECREASED by 1.
-        // - If the lemonSize has reached 0, it has been juiced and the state should become DRINK
-        // - Additionally, lemonSize is no longer relevant and should be set to -1
-        when (lemonadeState) {
+            // When the image is clicked in the SQUEEZE state the squeezeCount needs to be
+            // INCREASED by 1 and lemonSize needs to be DECREASED by 1.
+            // - If the lemonSize has reached 0, it has been juiced and the state should become DRINK
+            // - Additionally, lemonSize is no longer relevant and should be set to -1
             SQUEEZE -> {
                 squeezeCount += 1
                 lemonSize -= 1
                 if (lemonSize == 0) {
                     lemonadeState = DRINK
+                    lemonSize = -1
                 }
             }
-        }
 
-        // When the image is clicked in the DRINK state the state should become RESTART
-        when (lemonadeState) {
+            // When the image is clicked in the DRINK state the state should become RESTART
             DRINK -> {
                 lemonadeState = RESTART
-                lemonSize = -1
             }
-        }
 
-        // When the image is clicked in the RESTART state the state should become SELECT
-        when (lemonadeState) {
+            // When the image is clicked in the RESTART state the state should become SELECT
             RESTART -> {
                 lemonadeState = SELECT
             }
@@ -162,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         // Additionally, for each state, the lemonImage should be set to the corresponding
         // drawable from the drawable resources. The drawables have the same names as the strings
         // but remember that they are drawables, not strings.
-        when(lemonadeState) {
+        when (lemonadeState) {
             SELECT -> {
                 textAction.setText(R.string.lemon_select)
                 lemonImage!!.setImageResource(R.drawable.lemon_tree)
