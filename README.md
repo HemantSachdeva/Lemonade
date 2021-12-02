@@ -25,3 +25,10 @@ Tips
 
 - Use the provided tests to ensure your app is running as expected
 - DO NOT ALTER THE PROVIDED TESTS
+
+Output
+------
+
+<img width="200" height="433" src="https://raw.githubusercontent.com/HemantSachdeva/Lemonade/kt/output/LemonadeSELECTState.png" alt="Lemonade SELECT State"> <img width="200" height="433" src="https://raw.githubusercontent.com/HemantSachdeva/Lemonade/kt/output/LemonadeSQUEEZEState.png" alt="Lemonade SQUEEZE State">
+<img width="200" height="433" src="https://raw.githubusercontent.com/HemantSachdeva/Lemonade/kt/output/LemonadeDRINKState.png" alt="Lemonade DRINK State"> <img width="200" height="433" src="https://raw.githubusercontent.com/HemantSachdeva/Lemonade/kt/output/LemonadeRESTARTState.png" alt="Lemonade RESTART State">
+<img width="200" height="433" src="https://raw.githubusercontent.com/HemantSachdeva/Lemonade/kt/output/LemonadeSELECTState.png" alt="Lemonade SELECT State">
