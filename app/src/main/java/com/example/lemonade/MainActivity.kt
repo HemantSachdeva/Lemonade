@@ -148,6 +148,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setViewElements() {
         val textAction: TextView = findViewById(R.id.text_action)
+        val imageAction: ImageView = findViewById(R.id.image_lemon_state)
         // Set up a conditional that tracks the lemonadeState
 
         // For each state, the textAction TextView should be set to the corresponding string from
@@ -156,24 +157,24 @@ class MainActivity : AppCompatActivity() {
         // Additionally, for each state, the lemonImage should be set to the corresponding
         // drawable from the drawable resources. The drawables have the same names as the strings
         // but remember that they are drawables, not strings.
-        when (lemonadeState) {
-            SELECT -> {
-                textAction.setText(R.string.lemon_select)
-                lemonImage!!.setImageResource(R.drawable.lemon_tree)
-            }
-            SQUEEZE -> {
-                textAction.setText(R.string.lemon_squeeze)
-                lemonImage!!.setImageResource(R.drawable.lemon_squeeze)
-            }
-            DRINK -> {
-                textAction.setText(R.string.lemon_drink)
-                lemonImage!!.setImageResource(R.drawable.lemon_drink)
-            }
-            RESTART -> {
-                textAction.setText(R.string.lemon_empty_glass)
-                lemonImage!!.setImageResource(R.drawable.lemon_restart)
-            }
+        val imgResource = when (lemonadeState) {
+            SELECT -> R.drawable.lemon_tree
+            SQUEEZE-> R.drawable.lemon_squeeze
+            DRINK-> R.drawable.lemon_drink
+            else -> R.drawable.lemon_restart
         }
+
+        val textResource = when (lemonadeState) {
+            SELECT-> R.string.lemon_select
+            SQUEEZE-> R.string.lemon_squeeze
+            DRINK -> R.string.lemon_drink
+            else -> R.string.lemon_empty_glass
+
+        }
+
+        // Update the ImageView with the correct drawable resource ID
+        textAction.setText(textResource)
+        imageAction.setImageResource(imgResource)
     }
 
     /**
